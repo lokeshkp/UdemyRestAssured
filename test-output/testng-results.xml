@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="25546" started-at="2019-06-13T17:07:27Z" finished-at="2019-06-13T17:07:52Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="25546" started-at="2019-06-13T17:07:27Z" finished-at="2019-06-13T17:07:52Z">
+      <class name="udemy.practice.JiraBugCreateTest">
+        <test-method status="PASS" signature="jiraAuthentication()[pri:0, instance:udemy.practice.JiraBugCreateTest@26be92ad]" name="jiraAuthentication" is-config="true" duration-ms="3725" started-at="2019-06-13T22:37:27Z" finished-at="2019-06-13T22:37:31Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- jiraAuthentication -->
+        <test-method status="PASS" signature="createJiraBug()[pri:0, instance:udemy.practice.JiraBugCreateTest@26be92ad]" name="createJiraBug" duration-ms="1330" started-at="2019-06-13T22:37:31Z" finished-at="2019-06-13T22:37:32Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createJiraBug -->
+        <test-method status="PASS" signature="addCommentToBug()[pri:0, instance:udemy.practice.JiraBugCreateTest@26be92ad]" name="addCommentToBug" duration-ms="279" started-at="2019-06-13T22:37:32Z" depends-on-methods="udemy.practice.JiraBugCreateTest.createJiraBug" finished-at="2019-06-13T22:37:32Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addCommentToBug -->
+        <test-method status="PASS" signature="deleteBug()[pri:0, instance:udemy.practice.JiraBugCreateTest@26be92ad]" name="deleteBug" duration-ms="20168" started-at="2019-06-13T22:37:32Z" depends-on-methods="udemy.practice.JiraBugCreateTest.addCommentToBug, udemy.practice.JiraBugCreateTest.createJiraBug" finished-at="2019-06-13T22:37:52Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteBug -->
+      </class> <!-- udemy.practice.JiraBugCreateTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
