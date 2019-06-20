@@ -1,6 +1,7 @@
 package udemy.practice;
 
 import org.testng.annotations.Test;
+import org.testng.annotations.Test;
 
 import io.restassured.RestAssured;
 import utilities.ReusableMethods;

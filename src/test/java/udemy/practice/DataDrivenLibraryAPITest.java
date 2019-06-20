@@ -1,7 +1,9 @@
 package udemy.practice;
 
+import org.testng.annotations.Test;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+import org.testng.log4testng.Logger;
 
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
@@ -11,9 +13,21 @@ import utilities.Payload;
 
 import static io.restassured.RestAssured.given;
 
+import org.apache.logging.log4j.*;
 
 public class DataDrivenLibraryAPITest {
 	
+	private org.apache.logging.log4j.Logger log = LogManager.getLogger(DataDrivenLibraryAPITest.class.getName());
+	
+	@Test
+	public void testLog4J() {
+		log.debug("Rest Assured Debugging..");
+		
+		log.info("Checking log4j test info");
+		log.error("Checking log4j error");
+		log.fatal("Checking log4j fatal");
+		
+	}
 	
 	@Test(dataProvider="BooksData")
 	public void addBooks(String bookName, String bookId) {
@@ -27,11 +41,11 @@ public class DataDrivenLibraryAPITest {
 			post("/Library/Addbook.php").
 		then().assertThat().statusCode(200).extract().response();
 		
-		System.out.println(respo.asString());
+		log.info(respo.asString());
 		
 		JsonPath js = new JsonPath(respo.asString());
 		
-		System.err.println(js.get("ID"));
+		log.info(js.get("ID"));
 	}
 	
 	
@@ -51,7 +65,7 @@ public class DataDrivenLibraryAPITest {
 		
 		JsonPath js = new JsonPath(res.asString());
 		
-		System.err.println(js.get("msg"));
+		log.info(js.get("msg"));
 	}
 	
 	
