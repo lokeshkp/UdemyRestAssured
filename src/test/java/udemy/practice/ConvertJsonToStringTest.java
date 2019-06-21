@@ -2,6 +2,7 @@ package udemy.practice;
 
 import org.testng.annotations.Test;
 import org.testng.annotations.Test;
+import org.testng.annotations.Test;
 
 import io.restassured.RestAssured;
 import utilities.ReusableMethods;
@@ -22,7 +23,7 @@ public class ConvertJsonToStringTest {
 		
 		given().
 			header("Content-Type", "application/json").log().all().
-			body(ReusableMethods.convertStringFromJson("//Users//lokesh//eclipse-workspace//RestAssured//src//test//java//testData//addBook.json")).
+			body(ReusableMethods.convertStringFromJson("//Users//lokesh//eclipse-workspace//UdemyRestAssured//src//test//java//testData//addBook.json")).
 		when().
 			post("/Library/Addbook.php").
 		then().assertThat().statusCode(200);

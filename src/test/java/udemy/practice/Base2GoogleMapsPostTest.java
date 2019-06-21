@@ -1,6 +1,7 @@
 package udemy.practice;
 
 import org.testng.annotations.Test;
+import org.testng.annotations.Test;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -30,7 +31,7 @@ public class Base2GoogleMapsPostTest {
 	public void getData() throws IOException {
 		
 		Properties prop = new Properties();
-		FileInputStream fis = new FileInputStream("//Users//lokesh//eclipse-workspace//RestAssured//src//test//java//config//env.properties");
+		FileInputStream fis = new FileInputStream("//Users//lokesh//eclipse-workspace//UdemyRestAssured//src//test//java//config//env.properties");
 		prop.load(fis);
 		
 		baseURL = prop.getProperty("Loc_HOST");

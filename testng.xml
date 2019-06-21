@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite" parallel="methods">
+  <test thread-count="5" name="Test" parallel="methods">
+    <classes>
+      <class name="udemy.practice.Base1GoogleMapsGetTest"/>
+      <class name="udemy.practice.Base2GoogleMapsPostTest"/>
+      <class name="udemy.practice.ConvertJsonToStringTest"/>
+      <class name="udemy.practice.DataDrivenLibraryAPITest"/>
+      <class name="udemy.practice.TestNGPracticeTest"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

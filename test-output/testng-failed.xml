@@ -1,45 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite1]">
-  <test name="GoogleAPITest(failed)">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]" parallel="methods">
+  <test name="Test(failed)" parallel="methods">
     <classes>
+      <class name="udemy.practice.TestNGPracticeTest">
+        <methods>
+          <include name="testClassStart"/>
+          <include name="testBefore"/>
+          <include name="testClassEnd"/>
+          <include name="testFive"/>
+        </methods>
+      </class> <!-- udemy.practice.TestNGPracticeTest -->
       <class name="udemy.practice.Base1GoogleMapsGetTest">
         <methods>
           <include name="GoogleMapsGetTest"/>
         </methods>
       </class> <!-- udemy.practice.Base1GoogleMapsGetTest -->
-      <class name="udemy.practice.Base2GoogleMapsPostTest">
+      <class name="udemy.practice.DataDrivenLibraryAPITest">
         <methods>
-          <include name="postTest"/>
-          <include name="getData"/>
+          <include name="addBooks" invocation-numbers="0 1 2"/>
         </methods>
-      </class> <!-- udemy.practice.Base2GoogleMapsPostTest -->
+      </class> <!-- udemy.practice.DataDrivenLibraryAPITest -->
     </classes>
-  </test> <!-- GoogleAPITest(failed) -->
-  <test name="AddBookTest(failed)">
-    <classes>
-      <class name="udemy.practice.ConvertJsonToStringTest">
-        <methods>
-          <include name="addBooks"/>
-        </methods>
-      </class> <!-- udemy.practice.ConvertJsonToStringTest -->
-    </classes>
-  </test> <!-- AddBookTest(failed) -->
-  <test name="JiraAPITest(failed)">
-    <classes>
-      <class name="udemy.practice.JiraBugCreateTest">
-        <methods>
-          <include name="deleteBug"/>
-          <include name="addCommentToBug"/>
-          <include name="jiraAuthentication"/>
-          <include name="createJiraBug"/>
-        </methods>
-      </class> <!-- udemy.practice.JiraBugCreateTest -->
-      <class name="udemy.practice.ConvertJsonToStringTest">
-        <methods>
-          <include name="addBooks"/>
-        </methods>
-      </class> <!-- udemy.practice.ConvertJsonToStringTest -->
-    </classes>
-  </test> <!-- JiraAPITest(failed) -->
-</suite> <!-- Failed suite [Suite1] -->
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->

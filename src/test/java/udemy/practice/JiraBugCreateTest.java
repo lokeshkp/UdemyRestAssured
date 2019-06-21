@@ -1,6 +1,7 @@
 package udemy.practice;
 
 import org.testng.annotations.Test;
+import org.testng.annotations.Test;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import static io.restassured.RestAssured.given;
@@ -27,7 +28,7 @@ public class JiraBugCreateTest {
 	public String jiraAuthentication() throws IOException {
 		
 		Properties prop = new Properties();
-		FileInputStream fis = new FileInputStream("//Users//lokesh//eclipse-workspace//RestAssured//src//test//java//config//env.properties");
+		FileInputStream fis = new FileInputStream("//Users//lokesh//eclipse-workspace//UdemyRestAssured//src//test//java//config//env.properties");
 		prop.load(fis);
 		
 		baseURL = prop.getProperty("Jira_Host");
@@ -58,7 +59,7 @@ public class JiraBugCreateTest {
 		
 		Response resp = given().
 			header("Content-Type", "application/json").header("Cookie","JSESSIONID="+sessionId+"").
-			body(ReusableMethods.convertStringFromJson("//Users//lokesh//eclipse-workspace//RestAssured//src//test//java//testData//createJiraBug.json")).
+			body(ReusableMethods.convertStringFromJson("//Users//lokesh//eclipse-workspace//UdemyRestAssured//src//test//java//testData//createJiraBug.json")).
 		when().
 			post("/rest/api/2/issue").
 		then().

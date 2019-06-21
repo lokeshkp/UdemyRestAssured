@@ -1,5 +1,8 @@
 package udemy.practice;
 
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeClass;
+import org.testng.AssertJUnit;
 import static org.testng.AssertJUnit.assertFalse;
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeClass;
@@ -29,6 +32,7 @@ public class TestNGPracticeTest {
 		System.err.println("Before Class code executing...");
 	}
 	
+	@Test
 	@BeforeTest
 	public void testBefore() {
 		System.err.println("Before Test code executing...");
@@ -55,14 +59,15 @@ public class TestNGPracticeTest {
 	@Test()
 	public void testFour() {
 		System.out.println("Test Four method code executing...");
-		assertFalse(5>8);
+		AssertJUnit.assertFalse(5>8);
 	}
 	
 	//@Test
+	@Test
 	public void testFive() {
 		System.err.println("Test Five method code executing...");
 		SoftAssert sa = new SoftAssert();
-		Assert.fail();
+		AssertJUnit.fail();
 		System.out.println("Failing...");
 		
 		AssertJUnit.assertEquals("SithaRama", "SithaRama");
@@ -72,11 +77,13 @@ public class TestNGPracticeTest {
 	}
 
 	//@Test(timeOut=1000)
+	@Test
 	public void testSix() throws InterruptedException {
 		Thread.sleep(2000);
 		System.out.println("Test Six method code executing...");
 	}
 	
+	@Test
 	@AfterTest
 	public void testClassEnd() {
 		System.out.println("After Test code executing...");
