@@ -1,26 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]" parallel="methods">
+  <listeners>
+    <listener class-name="resources.ExtentReporterNG"/>
+  </listeners>
   <test name="Test(failed)" parallel="methods">
     <classes>
-      <class name="udemy.practice.TestNGPracticeTest">
-        <methods>
-          <include name="testClassStart"/>
-          <include name="testBefore"/>
-          <include name="testClassEnd"/>
-          <include name="testFive"/>
-        </methods>
-      </class> <!-- udemy.practice.TestNGPracticeTest -->
       <class name="udemy.practice.Base1GoogleMapsGetTest">
         <methods>
           <include name="GoogleMapsGetTest"/>
         </methods>
       </class> <!-- udemy.practice.Base1GoogleMapsGetTest -->
+      <class name="udemy.practice.ConvertJsonToStringTest">
+        <methods>
+          <include name="addBooks"/>
+        </methods>
+      </class> <!-- udemy.practice.ConvertJsonToStringTest -->
       <class name="udemy.practice.DataDrivenLibraryAPITest">
         <methods>
-          <include name="addBooks" invocation-numbers="0 1 2"/>
+          <include name="testLog4J"/>
+          <include name="addBooks"/>
+          <include name="deleteBooks"/>
         </methods>
       </class> <!-- udemy.practice.DataDrivenLibraryAPITest -->
+      <class name="udemy.practice.TestNGPracticeTest">
+        <methods>
+          <include name="testOne"/>
+          <include name="testClassStart"/>
+          <include name="testBefore"/>
+          <include name="testBefore"/>
+          <include name="testThree"/>
+          <include name="testClassEnd"/>
+          <include name="testClassEnd"/>
+          <include name="testFive"/>
+          <include name="testTwo"/>
+          <include name="testSix"/>
+          <include name="testFour"/>
+        </methods>
+      </class> <!-- udemy.practice.TestNGPracticeTest -->
+      <class name="udemy.practice.Base2GoogleMapsPostTest">
+        <methods>
+          <include name="postTest"/>
+          <include name="getData"/>
+        </methods>
+      </class> <!-- udemy.practice.Base2GoogleMapsPostTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

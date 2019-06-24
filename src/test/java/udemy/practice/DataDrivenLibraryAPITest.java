@@ -10,7 +10,7 @@ import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
-import utilities.Payload;
+import utilities.GoogleAPIPayload;
 
 import static io.restassured.RestAssured.given;
 
@@ -37,7 +37,7 @@ public class DataDrivenLibraryAPITest {
 		
 		Response respo = given().
 			header("Content-Type", "application/json").
-			body(Payload.AddBook(bookName,bookId)).
+			body(GoogleAPIPayload.AddBook(bookName,bookId)).
 		when().
 			post("/Library/Addbook.php").
 		then().assertThat().statusCode(200).extract().response();

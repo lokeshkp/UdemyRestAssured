@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
-import utilities.Payload;
+import utilities.GoogleAPIPayload;
 
 import static io.restassured.RestAssured.given;
 
@@ -30,8 +30,9 @@ public class Base2GoogleMapsPostTest {
 	@BeforeTest
 	public void getData() throws IOException {
 		
+		
 		Properties prop = new Properties();
-		FileInputStream fis = new FileInputStream("//Users//lokesh//eclipse-workspace//UdemyRestAssured//src//test//java//config//env.properties");
+		FileInputStream fis = new FileInputStream(System.getProperty("user.dir")+"//eclipse-workspace//UdemyRestAssured//src//test//java//config//env.properties");
 		prop.load(fis);
 		
 		baseURL = prop.getProperty("Loc_HOST");
@@ -52,7 +53,7 @@ public class Base2GoogleMapsPostTest {
 		Response res = 
 			given().
 				queryParam("key", keyVal).
-				body(Payload.getPostData()).
+				body(GoogleAPIPayload.getPostData()).
 			when().
 					post(addResource).
 			then().statusCode(200).extract().response();

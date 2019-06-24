@@ -23,7 +23,7 @@ public class ConvertJsonToStringTest {
 		
 		given().
 			header("Content-Type", "application/json").log().all().
-			body(ReusableMethods.convertStringFromJson("//Users//lokesh//eclipse-workspace//UdemyRestAssured//src//test//java//testData//addBook.json")).
+			body(ReusableMethods.convertStringFromJson(System.getProperty("user.dir")+"//eclipse-workspace//UdemyRestAssured//src//test//java//testData//addBook.json")).
 		when().
 			post("/Library/Addbook.php").
 		then().assertThat().statusCode(200);

@@ -1,6 +1,6 @@
 package utilities;
 
-public class Payload {
+public class GoogleAPIPayload {
 
 	public static String getPostData() {
 		

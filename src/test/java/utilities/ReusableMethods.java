@@ -10,19 +10,19 @@ import io.restassured.response.Response;
 
 public class ReusableMethods {
 
-	public static XmlPath rawToXML(Response r){
+	public static XmlPath rawToXML(Response res){
 
-		String respon=r.asString();
-		XmlPath x=new XmlPath(respon);
-		return x;
+		String respon=res.asString();
+		XmlPath xp=new XmlPath(respon);
+		return xp;
 
 	}
 
 
-	public static JsonPath rawToJson(Response r){ 
-		String respon=r.asString();
-		JsonPath x=new JsonPath(respon);
-		return x;
+	public static JsonPath rawToJson(Response res){ 
+		String respon=res.asString();
+		JsonPath jp=new JsonPath(respon);
+		return jp;
 	}
 	
 	
