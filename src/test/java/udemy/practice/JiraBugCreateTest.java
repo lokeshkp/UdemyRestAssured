@@ -28,7 +28,7 @@ public class JiraBugCreateTest {
 	public String jiraAuthentication() throws IOException {
 		
 		Properties prop = new Properties();
-		FileInputStream fis = new FileInputStream(System.getProperty("user.dir")+"//eclipse-workspace//UdemyRestAssured//src//test//java//config//env.properties");
+		FileInputStream fis = new FileInputStream(System.getProperty("user.dir")+"//src//test//java//config//env.properties");
 		prop.load(fis);
 		
 		baseURL = prop.getProperty("Jira_Host");
@@ -59,7 +59,7 @@ public class JiraBugCreateTest {
 		
 		Response resp = given().
 			header("Content-Type", "application/json").header("Cookie","JSESSIONID="+sessionId+"").
-			body(ReusableMethods.convertStringFromJson(System.getProperty("user.dir")+"//eclipse-workspace//UdemyRestAssured//src//test//java//testData//createJiraBug.json")).
+			body(ReusableMethods.convertStringFromJson(System.getProperty("user.dir")+"//src//test//java//testData//createJiraBug.json")).
 		when().
 			post("/rest/api/2/issue").
 		then().

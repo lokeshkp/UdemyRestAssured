@@ -30,9 +30,8 @@ public class Base2GoogleMapsPostTest {
 	@BeforeTest
 	public void getData() throws IOException {
 		
-		
 		Properties prop = new Properties();
-		FileInputStream fis = new FileInputStream(System.getProperty("user.dir")+"//eclipse-workspace//UdemyRestAssured//src//test//java//config//env.properties");
+		FileInputStream fis = new FileInputStream(System.getProperty("user.dir")+"//src//test//java//config//env.properties");
 		prop.load(fis);
 		
 		baseURL = prop.getProperty("Loc_HOST");
